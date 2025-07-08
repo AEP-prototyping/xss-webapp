@@ -41,8 +41,8 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
-    - name: Find Docker Eecutable Path
-      run: which docker 
+    # - name: Find Docker Eecutable Path
+      # run: which docker 
 
     - name: Build Docker image
       run: docker build -t xss-webapp .
