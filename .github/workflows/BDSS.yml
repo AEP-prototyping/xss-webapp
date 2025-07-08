@@ -43,6 +43,7 @@ jobs:
 
     - name: Build Docker image
       run: docker build -t xss-webapp .
+      run: docker build -t xss-webapp --iidfile ./image.id .
 
     - name: Which Docker 
       run: which docker
