@@ -32,7 +32,7 @@ on:
     # branches: [ main, 1-SamShoberWork-patch ]
   workflow_dispatch:
 jobs:
-  Build and Black_Duck_Security_Scan:
+  Build_and_Black_Duck_Security_Scan:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
