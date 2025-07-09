@@ -81,6 +81,8 @@ jobs:
         DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
         DETECT_PROJECT_VERSION_NAME: ${{ github.base_ref }}
         DETECT_CODE_LOCATION_NAME: ${{ github.event.repository.name }}-${{ github.base_ref }}
+        DETECT_DOCKER_PATH: "/usr/bin/docker" 
+        DETECT-DOCKER-IMAGE: "xss-webapp"
       with:
         # updated resources to use blackducksca_* from blackduck_* 
         blackducksca_url: ${{ vars.BLACKDUCK_URL }}
