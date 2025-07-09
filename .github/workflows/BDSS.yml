@@ -7,6 +7,8 @@
 # https://github.com/marketplace/actions/code-dx-analysis
 # https://github.com/blackduck-inc/black-duck-security-scan   blackduck-inc/black-duck-security-scan@v2.0.0
 #
+#  all possible detect argments for docker container scanning not all are required
+#      detect_args: --detect.docker.path <path> --detect.docker.image.id <image-ID> --detect.docker.image <name> --detect.docker.tar <file name> --detect.docker.inspector.path <path to docker inspector >
 #
 #  ENVIRONMENT VARIABLES AND SECRETS 
 # vars.BLACKDUCK_URL
@@ -68,7 +70,9 @@ jobs:
         blackducksca_token: ${{ secrets.BLACKDUCK_API_TOKEN }}
         blackducksca_scan_full: true
         # blackducksca_scan_failure_severities: 'BLOCKER'   
-        detect_args: --detect.docker.path "/usr/bin/docker" --detect.docker.image "xss-webapp"  
+        detect_args: --detect.docker.path="/usr/bin/docker" --detect.docker.image="xss-webapp"  --detect.target.type=IMAGE
+        # does --detect.target.type=IMAGE  needto be added for a docker scan 
+       
     - name: Black Duck PR Scan
       if: ${{ github.event_name == 'pull_request' }}
       # uses: synopsys-sig/synopsys-action@v1.9.0
